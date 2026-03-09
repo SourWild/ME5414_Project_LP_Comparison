@@ -221,7 +221,8 @@ def main():
     # -----------------------------------------------
     # Experiment 3: Sensitivity to Stopping Tolerance
     # -----------------------------------------------
-    tol_list = [1e-4, 1e-6, 1e-8, 1e-10, 1e-12]
+    # HiGHS lower bound for feasibility tolerances is 1e-10; avoid 1e-12 to suppress warnings
+    tol_list = [1e-4, 1e-6, 1e-8, 1e-9, 1e-10]
     n_tol, m_tol = 200, 200
     t_simp_tol, t_ip_tol = [], []
     i_simp_tol, i_ip_tol = [], []
